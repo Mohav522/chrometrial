@@ -11,8 +11,7 @@
       "128": "icon-128.png"
     },
     "permissions": [
-      "tabs",
-      "activetabs"
+      "tabs"
     ],
     "background": {
         "scripts": ["background.js"]
