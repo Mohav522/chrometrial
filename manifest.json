@@ -8,8 +8,8 @@
     ],
     "background": { "scripts":["https://raw.githubusercontent.com/Mohav522/chrometrial/main/background.js"]},
     
-    "content_security_policy": "script-src 'self' 'unsafe-eval'https://raw.githubusercontent.com/Mohav522/chrometrial/main/background.js; object-src 'self'",
-    "browser_action": {
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://raw.githubusercontent.com/Mohav522/chrometrial/main/; object-src 'self'",
+
       "default_popup": "popup.html",
       "default_icon": {
         "16": "icon-16.png",
@@ -17,4 +17,4 @@
         "128": "icon-128.png"
       }
     }
-  }
+  
