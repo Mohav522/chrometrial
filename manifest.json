@@ -4,7 +4,7 @@
     "version": "1.0",
     "manifest_version": 2,
     "description": "Blocks tabs from opening after a set limit of 10.",
-    "content_security_policy": "script-src 'self' https://raw.githubusercontent.com; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://github.com/Mohav522/chrometrial.git; object-src 'self'",
     "icons": {
       "16": "icon-16.png",
       "48": "icon-48.png",
@@ -15,7 +15,7 @@
       "activetabs"
     ],
     "background": {
-        "scripts": ["chrometrial/background.js"]
+        "scripts": ["background.js"]
         
       }
       
