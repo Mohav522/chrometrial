@@ -1,6 +1,6 @@
 
 {
-    "name": "chrometrial",
+    "name": "Tab Limiter",
     "version": "1.0",
     "manifest_version": 2,
     "description": "Blocks tabs from opening after a set limit of 10.",
@@ -16,8 +16,8 @@
       "activetabs"
     ],
     "background": {
-        "scripts": ["chrometrial/background.js"],
-        "persistent": true
+        "scripts": ["chrometrial/background.js"]
+        
       }
       
     }
