@@ -62,8 +62,4 @@ chrome.tabs.query({}, function(tabs) {
     images.appendChild(img);
   });
   
-  var img = document.createElement("img");
-img.src = "tab" + tabs.length + ".png";
-img.style.maxWidth = "100%"; // add this line to make the image fit within the card element
-img.style.height = "auto"; // add this line to maintain the aspect ratio of the image
-card.appendChild(img);
+  
