@@ -17,39 +17,4 @@ body {
     color: rgb(255, 255, 255);
   }
   
-  #tab-counter-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-  }
-  
-
-  
-  #tab-counter-bar {
-    height: 10px;
-    width: 90%;
-    border-radius: 10px;
-    background-color: #7fff00;
-    animation: progress-bar 1s ease-in-out infinite;
-  }
-  
-  @keyframes progress-bar {
-    0% {
-      background-color: #7fff00;
-      width: 0%;
-    }
-    70% {
-      background-color: #7fff00;
-    }
-    80% {
-      background-color: #ff8c00;
-    }
-    100% {
-      background-color: #ff0000;
-      width: 100%;
-    }
-  }
   
