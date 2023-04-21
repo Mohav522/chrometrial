@@ -4,13 +4,6 @@ chrome.tabs.query({}, function(tabs) {
     const MAX_TABS = 10;
   
   chrome.tabs.onCreated.addListener(function(tab) {
-
-    var img = document.createElement("img");
-img.src = "tab" + tabs.length + ".png";
-img.style.maxWidth = "100%"; // add this line to make the image fit within the card element
-img.style.height = "auto"; // add this line to maintain the aspect ratio of the image
-card.appendChild(img);
-
     
     chrome.tabs.query({currentWindow: true}, function(tabs) {
       
@@ -69,3 +62,8 @@ card.appendChild(img);
     images.appendChild(img);
   });
   
+  var img = document.createElement("img");
+img.src = "tab" + tabs.length + ".png";
+img.style.maxWidth = "100%"; // add this line to make the image fit within the card element
+img.style.height = "auto"; // add this line to maintain the aspect ratio of the image
+card.appendChild(img);
