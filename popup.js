@@ -40,11 +40,12 @@ chrome.tabs.query({}, function(tabs) {
             iconUrl: "icon-48.png"
           });
         } else {
-          // remove all existing images from the tab-images div
+          // Remove existing images
           while (images.firstChild) {
             images.removeChild(images.firstChild);
           }
-          // create the new image and append it to the tab-images div
+  
+          // Add image for current tab count
           var img = document.createElement("img");
           img.src = "tab" + tabs.length + ".png";
           images.appendChild(img);
@@ -52,9 +53,12 @@ chrome.tabs.query({}, function(tabs) {
       });
     });
   
-    // initialize the tab-images div with the first image
+    // Add initial image(s)
+    while (images.firstChild) {
+      images.removeChild(images.firstChild);
+    }
     var img = document.createElement("img");
-    img.src = "tab1.png";
+    img.src = "tab" + count + ".png";
     images.appendChild(img);
   });
   
