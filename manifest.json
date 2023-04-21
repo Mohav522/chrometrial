@@ -25,7 +25,8 @@
       "tabs",
       "scripting"
     ],
-    "browser_action": {
+    
+    "action": {
       "default_icon": "icon-48.png",
       "default_popup": "popup.html",
       "default_title": "Tab Limiter"
