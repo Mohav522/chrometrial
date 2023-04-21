@@ -26,11 +26,7 @@ body {
     flex-direction: column;
   }
   
-  #tab-counter {
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
+
   
   #tab-counter-bar {
     height: 10px;
