@@ -1,23 +1,26 @@
-// Get the tab count and update the UI
-function updateTabCount() {
-    chrome.tabs.query({ currentWindow: true }, function (tabs) {
-      var tabCount = tabs.length;
-      var tabCountElement = document.getElementById("tabCount");
-      tabCountElement.innerText = tabCount;
-      if (tabCount >= 10) {
-        alert("You have reached the maximum limit of 10 tabs per window.");
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-          chrome.tabs.remove(tabs[0].id);
+chrome.tabs.query({}, function(tabs) {
+    var count = tabs.length;
+  
+    const MAX_TABS = 10;
+  
+  chrome.tabs.onCreated.addListener(function(tab) {
+    
+    chrome.tabs.query({currentWindow: true}, function(tabs) {
+      
+      if (tabs.length > MAX_TABS) {
+       
+        chrome.tabs.remove(tab.id);
+        
+        chrome.notifications.create({
+          type: "basic",
+          title: "Tab Limit Exceeded",
+          message: "You have reached the maximum number of tabs in this window.",
+          iconUrl: "icon-48.png"
         });
       }
     });
-  }
-  
-  // Update the tab count when the popup is opened
-  document.addEventListener("DOMContentLoaded", function () {
-    updateTabCount();
   });
   
-  // Update the tab count when a tab is created or removed
-  chrome.tabs.onCreated.addListener(updateTabCount);
-  chrome.tabs.onRemoved.addListener(updateTabCount);
+    document.getElementById("tab-counter").textContent = count;
+  });
+  
