@@ -29,7 +29,7 @@
     },
   
     "host_permissions": [
-      "https://github.com/Mohav522/chrometrial.git"
+      "https://raw.githubusercontent.com/Mohav522/chrometrial/main/background.js"
     ],
   
     "permissions": [
