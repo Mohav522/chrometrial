@@ -21,11 +21,9 @@
         "activeTab", 
         "tabs"
       ],
-
-    "background": {
-        "scripts": ["background.js"]
-        
-      }
-      
-    }
     
+      "action": {},
+      "background": {
+        "service_worker": "background.js"
+
+      }}
