@@ -21,7 +21,7 @@
     ],
     "sandbox": {
       "pages": [
-        "sandbox.html"
+        "popup.html"
       ],
       "allow-scripts": true,
       "allow-forms": true,
