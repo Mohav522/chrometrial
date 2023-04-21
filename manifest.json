@@ -2,30 +2,49 @@
 {
     "name": "Tab Limiter",
     "version": "1.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "Blocks tabs from opening after a set limit of 10.",
-    "content_security_policy": "script-src 'self' https://github.com/Mohav522/chrometrial.git; object-src 'self'",
-    "icons": {
-      "16": "icon-16.png",
-      "48": "icon-48.png",
-      "128": "icon-128.png"
-    },
-
-    "browser_action": {
-        "default_icon": "icon-48.png",
-        "default_popup": "popup.html",
-        "default_title": "Tab Limiter"
-    },
-
-    "permissions": [
-        "activeTab", 
-        "tabs"
-      ],
-
-    "background": {
-        "scripts": ["background.js"]
-        
+    "icons": [
+      {
+        "src": "icon-16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "icon-48.png",
+        "sizes": "48x48",
+        "type": "image/png"
+      },
+      {
+        "src": "icon-128.png",
+        "sizes": "128x128",
+        "type": "image/png"
       }
-      
+    ],
+  
+    "action": {
+      "default_icon": "icon-48.png",
+      "default_popup": "popup.html",
+      "default_title": "Tab Limiter"
+    },
+  
+    "host_permissions": [
+      "https://github.com/Mohav522/chrometrial.git"
+    ],
+  
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ],
+  
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';",
+      "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self' https://github.com/Mohav522/chrometrial.git;"
+    },
+  
+    "background": {
+      "service_worker": "background.js"
     }
+  }
+  
     
