@@ -17,3 +17,35 @@ body {
     color: rgb(255, 255, 255);
   }
   
+  .progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #2196F3;
+    border-radius: 10px;
+    transition: width 0.2s ease-in-out;
+  }
+  
+  .tab-number {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .tab-number span {
+    color: #2196F3;
+  }
+  
