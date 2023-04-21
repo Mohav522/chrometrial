@@ -17,34 +17,43 @@ body {
     color: rgb(255, 255, 255);
   }
   
-  .progress-bar {
-    width: 200px;
-    height: 50px;
-    border: 1px solid #333;
-    position: relative;
-  }
-  
-  .progress {
-    width: 0%;
-    height: 100%;
-    background-color: green;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: width 0.5s;
-  }
-  
-  .labels {
+  #tab-counter-container {
     display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: -20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     width: 100%;
-    font-size: 12px;
+    flex-direction: column;
   }
   
-  .label {
-    width: 10px;
-    text-align: center;
+  #tab-counter {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  #tab-counter-bar {
+    height: 10px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #7fff00;
+    animation: progress-bar 1s ease-in-out infinite;
+  }
+  
+  @keyframes progress-bar {
+    0% {
+      background-color: #7fff00;
+      width: 0%;
+    }
+    70% {
+      background-color: #7fff00;
+    }
+    80% {
+      background-color: #ff8c00;
+    }
+    100% {
+      background-color: #ff0000;
+      width: 100%;
+    }
   }
   
