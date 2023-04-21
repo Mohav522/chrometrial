@@ -24,3 +24,22 @@ chrome.tabs.query({}, function(tabs) {
     document.getElementById("Tab Limiter").textContent = count;
   });
   
+  // Get the total number of tabs
+chrome.tabs.query({}, function(tabs) {
+    const totalCount = tabs.length;
+    
+    // Set the maximum number of tabs
+    const MAX_TABS = 10;
+  
+    // Calculate the percentage of tabs used
+    const percentage = Math.min((totalCount / MAX_TABS) * 100, 100);
+  
+    // Get the progress bar element
+    const progressBar = document.getElementById("progress-bar");
+  
+    // Set the progress bar width
+    progressBar.style.width = `${percentage}%`;
+  
+    // Set the progress bar text
+    progressBar.textContent = `${totalCount} / ${MAX_TABS}`;
+  });
