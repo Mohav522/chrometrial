@@ -21,6 +21,6 @@ chrome.tabs.query({}, function(tabs) {
     });
   });
   
-    document.getElementById("tab-counter").textContent = count;
+    document.getElementById("Tab Limiter").textContent = count;
   });
   
