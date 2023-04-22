@@ -23,3 +23,16 @@ chrome.tabs.query({currentWindow: true}, function(tabs) {
     chrome.browserAction.setBadgeText({text: ""});
   }
 });
+
+var tabCount = 0;
+
+chrome.tabs.onCreated.addListener(function(tab) {
+  tabCount++;
+  if (tabCount >= 10) {
+    chrome.tabs.sendMessage(tab.id, {message: "max_tab_limit_reached"});
+  }
+});
+
+chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
+  tabCount--;
+});

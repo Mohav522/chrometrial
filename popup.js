@@ -25,42 +25,9 @@ chrome.tabs.query({}, function(tabs) {
 });
 
   
-  chrome.tabs.query({}, function(tabs) {
-    var count = tabs.length;
-    const MAX_TABS = 10;
-    var images = document.getElementById("tab-images");
-  
-    chrome.tabs.onCreated.addListener(function(tab) {
-      chrome.tabs.query({currentWindow: true}, function(tabs) {
-        if (tabs.length > MAX_TABS) {
-          chrome.tabs.remove(tab.id);
-          chrome.notifications.create({
-            type: "basic",
-            title: "Tab Limit Exceeded",
-            message: "You have reached the maximum number of tabs in this window.",
-            iconUrl: "icon-48.png"
-          });
-        } else {
-          // Remove existing images
-          while (images.firstChild) {
-            images.removeChild(images.firstChild);
-          }
-  
-          // Add image for current tab count
-          var img = document.createElement("img");
-          img.src = "tab" + tabs.length + ".png";
-          images.appendChild(img);
-        }
-      });
-    });
-  
-    // Add initial image(s)
-    while (images.firstChild) {
-      images.removeChild(images.firstChild);
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.message === "max_tab_limit_reached") {
+      document.getElementById("message").innerText = "Maximum tab limit reached.";
     }
-    var img = document.createElement("img");
-    img.src = "tab" + count + ".png";
-    images.appendChild(img);
   });
-  
   
