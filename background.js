@@ -51,6 +51,9 @@ function updateBadge(tabCount) {
             chrome.notifications.clear("tab-limit-notification");
           }, 3000);
         });
+        updateBadge(tabCount);
+      } else {
+        updateBadge(tabCount);
       }
     });
   });
