@@ -12,8 +12,25 @@ body {
     font-size: 36px;
   }
   
-  #tab-counter {
+  .tab-counter {
     border-radius: 10px;
     font-weight: bold;
     color: rgb(255, 255, 255);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .message {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .tab-count {
+    font-size: 30px;
   }
