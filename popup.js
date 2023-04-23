@@ -24,10 +24,9 @@ chrome.tabs.query({}, function(tabs) {
   document.getElementById("Tab Limiter").textContent = count;
 });
 
-  
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.message === "max_tab_limit_reached") {
-      document.getElementById("message").innerText = "Maximum tab limit reached.";
+document.addEventListener("DOMContentLoaded", function() {
+    var message = document.getElementById("message");
+    if (message) {
+        message.textContent = "Max limit of 10 tabs reached!";
     }
-  });
-  
+});
