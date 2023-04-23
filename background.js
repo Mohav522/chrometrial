@@ -26,13 +26,24 @@ chrome.tabs.query({currentWindow: true}, function(tabs) {
 
 var tabCount = 0;
 
-chrome.tabs.onCreated.addListener(function(tab) {
-  tabCount++;
-  if (tabCount >= 10) {
-    chrome.tabs.sendMessage(tab.id, {message: "max_tab_limit_reached"});
-  }
-});
-
 chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
   tabCount--;
 });
+
+function updateBadge(tabCount) {
+    const badgeText = tabCount > 9 ? "10+" : tabCount.toString();
+    chrome.browserAction.setBadgeText({text: badgeText});
+  }
+  
+  chrome.tabs.onCreated.addListener(function(tab) {
+    chrome.tabs.query({currentWindow: true}, function(tabs) {
+      const tabCount = tabs.length;
+      if (tabCount > 10) {
+        chrome.tabs.remove(tab.id);
+        updateBadge(tabCount);
+      } else {
+        updateBadge(tabCount);
+      }
+    });
+  });
+  
