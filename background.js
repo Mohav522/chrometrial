@@ -15,19 +15,18 @@ function updateBadge(tabCount) {
   chrome.tabs.onCreated.addListener(function(tab) {
     chrome.tabs.query({currentWindow: true}, function(tabs) {
       const tabCount = tabs.length;
-      if (tabCount > 10) {
+      if (tabCount >= 10) {
         chrome.tabs.remove(tab.id);
         chrome.notifications.create({
           type: "basic",
           title: "Tab Limit Exceeded",
-          message: "Stop right here, there won't be an 11th!",
+          message: "You have reached the maximum number of tabs allowed.",
           iconUrl: "icon.png"
         }, function() {
           setTimeout(function() {
             chrome.notifications.clear("tab-limit-notification");
           }, 3000);
         });
-        updateBadge(tabCount);
       } else {
         updateBadge(tabCount);
       }
