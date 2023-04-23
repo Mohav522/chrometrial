@@ -2,31 +2,27 @@
 {
     "name": "Tab Limiter",
     "version": "1.0",
-    "manifest_version": 2,
-    "description": "Blocks tabs from opening after a set limit of 10.",
-    "content_security_policy": "script-src 'self' https://github.com/Mohav522/chrometrial.git; object-src 'self'",
+    "manifest_version": 3,
+    "description": "An extension that counts the number of tabs and limits to a maximum of 10 tabs per window.",
     "icons": {
       "16": "icon-16.png",
       "48": "icon-48.png",
       "128": "icon-128.png"
     },
-
-    "browser_action": {
-        "default_icon": "icon-48.png",
-        "default_title": "Tab Limiter"
+    "action": {
+      "default_icon": "icon-48.png",
+      "default_title": "Tab Limiter"
     },
-
     "permissions": [
-        "activeTab", 
-        "tabs",
-        "notifications"
-
-      ],
-
-    "background": {
-        "scripts": ["background.js"]
-        
+      "activeTab",
+      "tabs",
+      "notifications"
+    ],
+    "service_worker": {
+      "script": "background.js",
+      "background": {
+        "service_worker": "background.js"
       }
-      
     }
-    
+  }
+  
