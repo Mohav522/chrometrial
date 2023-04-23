@@ -18,11 +18,8 @@
       "tabs",
       "notifications"
     ],
-    "service_worker": {
-      "script": "background.js",
-      "background": {
+    
+    "background": {
         "service_worker": "background.js"
       }
     }
-  }
-  
