@@ -24,9 +24,14 @@ chrome.tabs.query({}, function(tabs) {
   document.getElementById("Tab Limiter").textContent = count;
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var message = document.getElementById("message");
-    if (message) {
+chrome.tabs.query({}, function(tabs) {
+    var count = tabs.length;
+    if (count >= 10 && count <= 11) {
+      var message = document.getElementById("message");
+      if (message) {
         message.textContent = "Max limit of 10 tabs reached!";
+      }
     }
-});
+    document.getElementById("Tab Limiter").textContent = count;
+  });
+  
