@@ -7,9 +7,9 @@ function updateBadge(tabCount) {
   let badgeColor = "";
   if (tabCount >= 1 && tabCount <= 5) {
     badgeColor = "#00FF00"; // green
-  } else if (tabCount >= 6 && tabCount <= 8) {
+  } else if (tabCount >= 6 && tabCount <= 9) {
     badgeColor = "#FFFF00"; // yellow
-  } else if (tabCount >= 9 && tabCount <= 10) {
+  } else if (tabCount >= 10 && tabCount <= 10) {
     badgeColor = "#FF0000"; // red
   }
   
