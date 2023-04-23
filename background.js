@@ -1,7 +1,7 @@
 let tabCount = 0;
 
 function updateBadge(tabCount) {
-  const badgeText = tabCount > 9 ? "10+" : tabCount.toString();
+  const badgeText = tabCount > 9 ? "10" : tabCount.toString();
   chrome.browserAction.setBadgeText({ text: badgeText });
   
   let badgeColor = "";
