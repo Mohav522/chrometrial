@@ -29,7 +29,7 @@ chrome.tabs.query({}, function(tabs) {
     if (count >= 10 && count <= 11) {
       var message = document.getElementById("message");
       if (message) {
-        message.textContent = "Max limit of 10 tabs reached!";
+        message.textContent = "Max limit reached!";
       }
     }
     document.getElementById("Tab Limiter").textContent = count;
