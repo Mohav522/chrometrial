@@ -1,12 +1,12 @@
 function updateBadge(tabCount) {
     let color = "";
     if (tabCount >= 1 && tabCount <= 5) {
-      color = "039400"; //green
-    } else if (tabCount >= 6 && tabCount <= 9) {
-      color = "FFC700"; //yellow
-    } else if (tabCount >= 10 && tabCount <= 10) {
-      color = "A30000"; //red
-    }
+        color = "#00FF00"; // green
+      } else if (tabCount >= 6 && tabCount <= 9) {
+        color = "#FFFF00"; // yellow
+      } else if (tabCount >= 10 && tabCount <= 10) {
+        color = "#FF0000"; // red
+      }
     const badgeText = tabCount > 9 ? "10" : tabCount.toString();
     chrome.action.setBadgeText({text: badgeText});
     chrome.action.setBadgeBackgroundColor({color: color});
