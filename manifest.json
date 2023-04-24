@@ -1,10 +1,10 @@
 
 {
-    "name": "Tab Limiter",
+    "name": "Tab Tamer",
     "version": "1.0",
     "manifest_version": 3,
     "description": "An extension that counts the number of tabs and limits to a maximum of 10 tabs per window.",
-    
+
     "icons": {
       "16": "icon-16.png",
       "48": "icon-48.png",
@@ -13,7 +13,7 @@
 
     "action": {
       "default_icon": "icon-48.png",
-      "default_title": "Tab Limiter"
+      "default_title": "Tab Tamer"
     },
 
     "permissions": [
