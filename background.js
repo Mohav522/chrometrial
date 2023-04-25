@@ -17,15 +17,15 @@
 
 // Set condition - if tabcount is between 1-5 then the background color will be green for optimum number of open tabs.
     if (tabCount >= 1 && tabCount <= 5) {
-        color = "#00FF00";
+        color = "#00FF00"; //green = optimum number of tabs.
 
 // Set condition - if tabcount is between 6-9 then the background color will be yellow to show user is moving towards the limit.
       } else if (tabCount >= 6 && tabCount <= 9) {
-        color = "#FFFF00";
+        color = "#FFFF00"; //yellow = moving towards max limit.
 
-// Set condition - if tabcount is 10 then the background color will be red depicting you have reached the max limit.
+// Set condition - if tabcount is equal 10 then the background color will be red depicting you have reached the max limit.
       } else if (tabCount == 10) {
-    color = "#FF0000";
+    color = "#FF0000"; // red = max limit.
       }
 
 // const badgeText is creating a variable named badgtext which is assigned the value of tabcount. Using this we have set a condition- if tabcount is greater than 9 then set badgetext to 10 displaying the max tab limit. If the tabcount is less than or equal to 9 then show the current tabcount using toString().
