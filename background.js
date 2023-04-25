@@ -12,8 +12,7 @@
 
 // function updateBadge(tabCount): Since we need to count the open tabs to put a max limit I have used function updateBadge(tabCount) that determines the total tab count/number of tabs currently open in the window. 
 // Based on the tab count value it determines the color of the badge that will be displayed on the extension icon using chrome apis - chrome.action.setBadgeText() and chrome.action.setBadgeBackgroundColor() respectively. 
-
-   function updateBadge(tabCount) {
+    function updateBadge(tabCount) {
     let color = "";
 
 // Set condition - if tabcount is between 1-5 then the background color will be green for optimum number of open tabs.
@@ -25,8 +24,8 @@
         color = "#FFFF00";
 
 // Set condition - if tabcount is 10 then the background color will be red depicting you have reached the max limit.
-      } else if (tabCount >= 10 && tabCount <= 10) {
-        color = "#FF0000";
+      } else if (tabCount == 10) {
+    color = "#FF0000";
       }
 
 // const badgeText is creating a variable named badgtext which is assigned the value of tabcount. Using this we have set a condition- if tabcount is greater than 9 then set badgetext to 10 displaying the max tab limit. If the tabcount is less than or equal to 9 then show the current tabcount using toString().
@@ -69,4 +68,3 @@
     const tabCount = tabs.length;
     updateBadge(tabCount);
   });
-  
