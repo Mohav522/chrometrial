@@ -17,7 +17,9 @@ function updateBadge(tabCount) {
       chrome.tabs.query({ active: true, windowId: currentWindow.id }, function (activeTabs) {
         const activeTab = activeTabs[0];
         const message = "Maximum limit of 10 tabs reached.";
-        chrome.tabs.sendMessage(activeTab.id, { message: message });
+        chrome.tabs.executeScript(activeTab.id, {
+          code: `alert("${message}");`
+        });
       });
     });
   }
@@ -26,12 +28,7 @@ function updateBadge(tabCount) {
 chrome.tabs.onCreated.addListener(function (tab) {
   chrome.tabs.query({ currentWindow: true }, function (tabs) {
     const tabCount = tabs.length;
-    if (tabCount > 10) {
-      chrome.tabs.remove(tab.id);
-      updateBadge(tabCount);
-    } else {
-      updateBadge(tabCount);
-    }
+    updateBadge(tabCount);
   });
 });
 
@@ -45,14 +42,4 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 chrome.tabs.query({ currentWindow: true }, function (tabs) {
   const tabCount = tabs.length;
   updateBadge(tabCount);
-});
-
-chrome.tabs.onCreated.addListener(function (tab) {
-  chrome.tabs.query({ currentWindow: true }, function (tabs) {
-    const tabCount = tabs.length;
-    if (tabCount === 11) {
-      const message = "Maximum tab limit reached.";
-      chrome.tabs.sendMessage(tab.id, { message: message });
-    }
-  });
 });
